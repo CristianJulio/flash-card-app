@@ -1,0 +1,22 @@
+export default [
+  { id: 1, question: 'Continental United States has 4 time zones, can you name them?', answer: 'Pacific, Mountain, Central, Eastern' },
+  { id: 2, question: 'What was the Turkish city of Istanbul called before 1930?', answer: 'Constantinople' },
+  { id: 3, question: 'From which US city do the band The Killers originate?', answer: 'Las Vegas' },
+  { id: 4, question: 'Name the Coffee shop in US sitcom Friends', answer: 'Central Perk' },
+  { id: 5, question: 'How many human players are there on each side in a polo match?', answer: 'Four' },
+  { id: 6, question: 'In what year did Tony Blair become British Prime Minister?', answer: '1997' },
+  { id: 7, question: 'How many times has England won the men’s football World Cup?', answer: 'Once (1966)' },
+  { id: 8, question: 'What is the capital of New Zealand?', answer: 'Wellington' },
+  { id: 9, question: 'Street artist Banksy is originally associated with which British city?', answer: 'Bristol' },
+  { id: 10, question: 'From what grain is the Japanese spirit Sake made?', answer: 'Rice' },
+  { id: 11, question: 'In which part of your body would you find the cruciate ligament?', answer: 'Knee' },
+  { id: 12, question: 'What is the name of the main antagonist in the Shakespeare play Othello?', answer: 'Iago' },
+  { id: 13, question: 'What element is denoted by the chemical symbol Sn in the periodic table?', answer: 'Tin' },
+  { id: 14, question: 'What is the name of the 1976 film about the Watergate scandal, starring Robert Redford and Dustin Hoffman?', answer: 'All the President’s Men' },
+  { id: 15, question: 'How many of Henry VIII’s wives were called Catherine?', answer: '3' },
+  { id: 16, question: 'What was the most popular girls name in the UK in 2019?', answer: 'Olivia' },
+  { id: 17, question: 'Which comedian was the second permanent host of Never Mind the Buzzcocks after Mark Lamarr?', answer: 'Simon Amstell' },
+  { id: 18, question: 'Which popular video game franchise has released games with the subtitles World At War and Black Ops?', answer: 'Call of Duty' },
+  { id: 19, question: 'In what US State is the city Nashville?', answer: 'Tennessee' },
+  { id: 20, question: 'Which rock band was founded by Trent Reznor in 1988?', answer: 'Nine Inch Nails' }
+]
