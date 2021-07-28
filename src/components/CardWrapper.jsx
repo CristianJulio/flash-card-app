@@ -5,13 +5,17 @@ import Menu from './Menu';
 import Message from './Message';
 
 function CardWrapper() {
+  const [results, setResults] = useState({
+    correct: 0,
+    wrong: 0,
+  });
   const [isAnswerOk, setIsAnswerOk] = useState(null);
   const [data, setData] = useState({
     cards: [],
     currentcard: {},
     wrongAnswers: [],
     counter: 0,
-    round: 1
+    round: 1,
   });
   const { currentcard, wrongAnswers, counter, cards, round } = data;
 
@@ -52,15 +56,26 @@ function CardWrapper() {
     }));
   };
 
-  if(counter === 20) return <Menu setData={setData} sortFlashCardsRandomly={sortFlashCardsRandomly} />
-  
+  if (counter === 20)
+    return (
+      <Menu
+        setData={setData}
+        sortFlashCardsRandomly={sortFlashCardsRandomly}
+        results={results}
+      />
+    );
+
   return (
     <div>
       {isAnswerOk === null && (
-        <Card currentcard={currentcard} wrongAnswers={wrongAnswers} setIsAnswerOk={setIsAnswerOk} />
+        <Card currentcard={currentcard} wrongAnswers={wrongAnswers} setIsAnswerOk={setIsAnswerOk} setResults={setResults} />
       )}
-      {isAnswerOk === true && <Message msg="Correct! :)" setData={setData} setIsAnswerOk={setIsAnswerOk} />}
-      {isAnswerOk === false && <Message msg="Wrong Answer :(" setData={setData} setIsAnswerOk={setIsAnswerOk} />}
+      {isAnswerOk === true && (
+        <Message msg="Correct!" setData={setData} setIsAnswerOk={setIsAnswerOk} />
+      )}
+      {isAnswerOk === false && (
+        <Message msg="Wrong Answer" setData={setData} setIsAnswerOk={setIsAnswerOk} />
+      )}
     </div>
   );
 }

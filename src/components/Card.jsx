@@ -4,12 +4,12 @@ import Menu from './Menu';
 
 const CardStyled = styled.div`
   box-shadow: 0px 3px 18px 3px rgba(0, 0, 0, 0.2);
-  background: #faf0ca;
+  background: #FFFFFF;
   width: 600px;
   margin: 50px auto;
 `;
 const Question = styled.p`
-  background-image: linear-gradient(to bottom right, #f95738, #ee964b);
+  background: #04724D;
   padding: 15px 15px;
   font-weight: 400;
   color: #fff;
@@ -19,25 +19,37 @@ const Question = styled.p`
 const AnswerWrapper = styled.ol`
   display: grid;
   list-style-type: upper-alpha;
-  grid-template-columns: repeat(2, 1fr);
   grid-gap: 15px;
+  place-items: center;
   padding: 15px;
 `;
 const Answer = styled.li`
-  text-align: center;
+  text-align: left;
   padding: 5px;
   cursor: pointer;
   color: #0d3b66;
+  width: 80%;
 `;
 
-const Card = ({ currentcard, wrongAnswers, setIsAnswerOk }) => {
+const Card = ({ currentcard, wrongAnswers, setIsAnswerOk, setResults }) => {
   const { question, answer } = currentcard;
   const combinedAnswers = [answer, ...wrongAnswers];
+
   const handleAnswerClick = ({ target }) => {
     const text = target.textContent;
 
     if (text === answer) {
       setIsAnswerOk(true)
+      setResults(results => ({
+        ...results,
+        correct: results.correct + 1
+      }))
+    } else {
+      setIsAnswerOk(false)
+      setResults(results => ({
+        ...results,
+        wrong: results.wrong + 1
+      }))
     }
   };
   combinedAnswers.sort()
